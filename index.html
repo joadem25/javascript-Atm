@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online banking service</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="atm.css">
+</head>
+<body class="d-flex flex-column align-items-center">
+
+    <div class="col-12 text-center" id="rowHeader">
+        <h2 id="headerName">JMB Automated Teller Online System</h2>
+        <h6 id="motto"><em>Banking anywhere, anytime</em></h6>
+    </div>
+
+        <div class="col-12" id="container">
+            <div class="row" id="">
+                
+                    <div class="col">
+                        <span id="obs">ATOS</span>
+                    </div>
+                    <div class="col d-flex justify-content-end align-items-center">
+                        <img src="./images/atm-removebg-preview.png" alt="" class="img-fluid" width="35">
+                    
+                </div>
+                
+            </div>
+            <div class="row" id="rowSignUp" style="display: flex;">
+                <div class="col-12 d-flex flex-column align-items-center">
+                    <div class="d-flex flex-column align-items-center text-wrap">
+                        <div class="col-12  d-flex flex-column">
+                            <h2>Sign Up</h2>
+                            <p>Please provide the following information</p>
+                            
+                                <div id="message"></div>
+                                <!-- <legend>Names</legend> -->
+                                <label for="">First name
+                                    <input type="text" id="firstName" class="inpStyle">
+                                </label>
+                                <p> </p>
+                                <label for="">Last name 
+                                    <input type="text" id="lastName" class="inpStyle">
+                                </label>
+                                
+                            </div>
+                    <p></p>
+                    <button class="btn btn-primary" onclick="signUp()">Sign Up</button>
+                </div>
+                </div>
+            </div>
+            <div class="row" id="rowWelcomePage" style="display: none;">
+                <div class="col-12  d-flex flex-column align-items-center text-center">
+                    <h2 class="textColor">Welcome, <br><span id="nameWel"></span></h2>
+                    <p class="text-start">The Automated Teller Online System (ATOS) is a 
+                        system which enables online transaction anywhere in the world. <br>
+                        As a new user, you will be credited with $1,000 in your savings account. If you like to change the
+                        type of account, you can do that under account settings, as well as change your name.
+                    </p>
+                    <p>Thanks for choosing JMB ATOS</p>
+                    <button class="btn btn-primary" onclick="welProceed()">Proceed</button>
+                </div>
+            </div>
+            <div class="row" id="rowAccBal" style="display: none;">
+                <div class="col-12  d-flex justify-content-center align-items-center" id="statusBoard">
+                    <div class="row">
+                        <span class="col-12 text-center">Account Balance</span>
+                        <span class="col-12 text-center" id="balanceText"><span>$</span><span id="balance">1000</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center" id="rowTranStatus" style="display: none;"><hr>
+                <div class="col-12  " >
+                     <p id="accActionStatus">Input amount and select a transaction</p> 
+                </div>
+            </div>
+            <div class="row " id="rowAmt" style="display: none;">
+                <div class="col-12  d-flex justify-content-center align-items-center" id="amountbox">
+                    
+                    <input type="text" placeholder="$ Amount" id="amount" maxlength="4" class="inpStyle">
+                </div>
+            </div>
+            <div class="row" id="rowAccInfoNTrans" style="display: none;">
+                <div class="col-6 col-md-3 d-flex flex-column justify-content-evenly" id="bankingInfo">
+                    <div class="  row">
+                        <div class="col-12 ">Account Name</div>
+                        <div class="col-12 textColor" id="customerName">Name</div>
+                    </div>
+                    <div class=" row">
+                        <div class="col-12 ">Account Number</div>
+                        <div class="col-12 textColor">007 911 5047</div>
+                    </div>
+                    <div class=" row">
+                        <div class="col-12 ">Account type</div>
+                        <div class="col-12 textColor" id="accountType">Savings</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-9 d-flex flex-column justify-content-evenly" id="bankingAction">
+                    <div class=" row justify-content-evenly gy-2 gap-1" id="dw">
+                            <button class="col-10 col-sm-5 btn btn-outline-primary p-sm-4 bold  d-flex justify-content-center align-items-center fs-4 flex-wrap" onclick="deposit()" id="depo">Deposit</button>
+                        <button class="col-11 col-sm-5 btn btn-outline-primary p-sm-4 bold d-flex justify-content-center align-items-center fs-4 flex-wrap " onclick="withdraw()">Withdraw</button> 
+            
+                    </div>
+                    <div class=" row justify-content-evenly gy-2 gap-1" id="pa">
+                        <button class="col-11 col-sm-5 btn btn-outline-primary p-sm-4 bold d-flex justify-content-center align-items-center fs-3" onclick="payments()">Transfer</button>
+                        
+                        <button class="col-11 col-sm-5 btn btn-outline-primary p-sm-4 bold d-flex justify-content-center align-items-center fs-3" onclick="airtime()">Airtime</button>
+                    </div>
+                    <div class=" row text-center justify-content-center" id="as">
+                        <button class="col-10 col-sm-10 btn btn-outline-primary p-4 bold d-flex justify-content-center align-items-center fs-3" onclick="accSet()">Account Settings</button>
+                    </div>
+                    <div class="row" id="trans">
+                        <form class="col-12 d-flex flex-column" id="transForm">
+                            <span class="textColor">Bank name:</span>
+                            <select name="" id="bankName" class="inpStyle">
+                                <option value="1" selected disabled>Select Bank</option>
+                                <option value="2">Guaranty Trust Bank</option>
+                                <option value="3">First Bank of Nigeria</option>
+                                <option value="4">Polaris Bank</option>
+                                <option value="5">Wema Bank</option>
+                            </select><br>
+                            <span class="textColor">Account number:</span>
+                            <input type="number" name="" id="accNum" placeholder="account number" class="inpStyle" maxlength="10" minlength="10">
+                            <p></p>
+                        </form>
+                        <button id="tra" class="btn btn-secondary" onclick="tranAirt()">Transfer</button>
+                        <p></p>
+                        <button id="tra" onclick="cont()" class="btn btn-primary">Return</button>
+                        
+                    </div>
+                    <div class="row justify-content-center" id="airt">
+                        <form class="col-12  d-flex flex-column" id="airtForm">
+                            <span class="textColor">Network:</span>
+                            <select name="" id="network" class="inpStyle">
+                                <option value="1" selected disabled>Select Network</option>
+                                <option value="2">MTN</option>
+                                <option value="3">Airtel</option>
+                                <option value="4">Glo</option>
+                                <option value="5">9mobile</option>
+                            </select>
+                            <span class="textColor">Phone number:</span>
+                            <input type="number" name="" id="phonNum" class="inpStyle" placeholder="11 digit number" maxlength="11" minlength="11">
+                            <p></p>
+                        </form>
+                        <button id="tra" onclick="tranAirt()" class="btn btn-secondary">Transfer</button>
+                        <p></p>
+                        <button id="tra" onclick="cont()" class="btn btn-primary">Return</button>
+                    </div>
+                    <div class="row justify-content-center" id="rowAccSet" style="display: none;">
+                        <div class="">
+                            <form class="col-12  d-flex flex-column" id="editForm">
+                                <h2>Settings</h2>
+                                <p>Edit as required</p>
+                                    <div id="messEdit"></div>
+                                    
+                                    <!-- <div id="message"></div> -->
+                                    <span>First name</span> 
+                                        <input type="text" id="firstNameEd" class="inpStyle">
+                                    <br><br>
+                                    <span>Last name</span>  
+                                        <input type="text" id="lastNameEd" class="inpStyle">
+                                    
+                                    
+                                    <div class="form-check"> Account type <br>
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Savings
+                                        </label>
+                                        </div>
+                                        <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            Current
+                                        </label>
+                                        </div>
+                                        <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                                        <label class="form-check-label" for="flexRadioDefault3">
+                                            Sapa
+                                        </label>
+                                    </div>
+                                
+                                </form>
+                            <button class="btn btn-info" onclick="edit()"> Save</button>
+                            <button class="btn btn-primary" onclick="cont()">Return</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    
+            
+        </div>
+    <!-- </div> -->
+    
+
+    <script src="atm.js"></script>
+</body>
+</html>

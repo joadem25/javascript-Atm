@@ -1,0 +1,136 @@
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(30, 50, 200, 1), rgba(30, 50, 200, 1), rgba(30, 50, 200, 1));
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+#rowHeader {
+    height: fit-content;
+    color: rgb(143, 252, 143);
+
+}
+
+
+#headerName {
+    font-size: 1.5rem;
+}
+
+#motto {
+    color: white;
+}
+
+#rowTranStatus {
+    color: rgb(143, 252, 143);
+    height: 80px;
+}
+
+#rowAmt {
+    height: 50px;
+}
+
+#rowSignUp {
+    color: rgb(143, 252, 143);
+}
+
+#rowWelcomePage {
+    color: rgb(143, 252, 143);
+}
+
+#rowAccBal {
+    color: rgb(143, 252, 143);
+}
+
+#rowAccSet {
+    color: white;
+}
+
+
+#currencySymbol {
+    color: white;
+    font-size: 2.5rem;
+}
+
+#balanceText {
+    color: white;
+    font-size: 2.5rem;
+
+}
+
+#container {
+    width: 80%;
+    height: fit-content;
+    box-shadow: 1px 1px 25px rgb(143, 252, 143);
+    border-radius: 5px;
+    background-color: rgba(12, 70, 231, 0.8);
+   
+    padding: 15px;
+}
+
+#bankingInfo {
+   
+    color: rgb(143, 252, 143);
+}
+
+#bankingAction {
+    
+    gap: 10px;
+}
+
+.textColor {
+    color: white;
+}
+
+#trans {
+    display: none;
+}
+
+#airt {
+    display:none;
+    
+}
+
+#statusBoard {
+    height: fit-content;
+}
+
+#amountbox {
+    
+    font-size: 1.5rem;
+}
+
+#obs {
+    font-size: 2rem;
+    font-weight: 900;
+    text-decoration: solid;
+    color: white;
+    display: block;
+}
+
+#amount {
+    width: 120px;
+    
+}
+
+.inpStyle {
+    background-color: white;
+    border: 0;
+    border-radius: 2px;
+    color: black;
+}
+
+.bold {
+    color: rgb(143, 252, 143);
+    border-color: white;
+}
+
+button.d-flex:hover {
+    background-color: rgb(143, 252, 143);
+    color: white;
+}
+
+button.d-flex:focus {
+    background-color: rgb(143, 252, 143);
+}
